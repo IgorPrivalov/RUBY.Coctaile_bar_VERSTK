@@ -1,0 +1,2 @@
+module CoctailesHelper
+end
