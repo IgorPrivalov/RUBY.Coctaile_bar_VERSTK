@@ -1,12 +1,5 @@
 <%= form_for @product do |f| %>
-  <p><%= f.label :name %><br>
-    <%= f.text_field :name %></p>
-  <p><%= f.label :cost_price %><br>
-    <%= number_field :product, :cost_price %></p>
-  <p><%= f.label :min_value %><br>
-    <%= number_field :product, :min_value %></p>
-    <p><%= f.label :type %><br>
-      <%= select(:product, :product_type, Product.product_types) %></p>
+  <%= render partial: 'form', locals: {f: f} %>
   <br>
   <%= f.submit 'Create' %>
 <% end %>

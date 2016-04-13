@@ -1,0 +1,13 @@
+<ul>
+  <li><%= "ID: #{@coctaile.id}" %></li>
+  <li><%= "Name: #{@coctaile.name}" %></li>
+  <li><%= "Min value: #{@coctaile.value}" %></li>
+  <li><%= "Cost price: #{@coctaile.price}" %></li>
+</ul>
+<p>Ingredients</p>
+  <hr>
+<ul>
+    <% @coctaile.ingredients.each do |ingredient| %>
+      <li><%= "#{ingredient.product.name} #{ingredient.value}" %></li>
+    <% end %>
+</ul>
