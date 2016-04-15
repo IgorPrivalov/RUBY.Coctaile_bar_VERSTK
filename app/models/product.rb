@@ -1,8 +1,8 @@
 class Product < ActiveRecord::Base
 
   validates :name, :cost_price, :min_value, :product_type, presence: true
-
-  validates :cost_price, :min_value, numericality: {:greater_than => 0}
+  validates :name, presence: true, allow_blank: false
+  validates :cost_price, :min_value, numericality: {greater_than: 0 }
 
   has_many :ingredients
 

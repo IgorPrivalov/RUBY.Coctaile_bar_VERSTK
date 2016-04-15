@@ -7,7 +7,6 @@
       <%= ingredient_form.label :value %>
       <%= ingredient_form.number_field(:value) %>
       <%= ingredient_form.label :product %>
-      <%= ingredient_form.collection_select(:product_id,
-          Product.all, :id, :name, {:promt =>true}) %>
+      <%= ingredient_form.collection_select(:product_id, Product.all, :id, :name, { :prompt => true } ) %>
     </p>
 <% end %>

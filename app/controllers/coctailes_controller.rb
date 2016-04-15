@@ -25,8 +25,7 @@ class CoctailesController < ApplicationController
       flash[:success] = "Coctaile \'#{@coctaile.name.humanize}\' was created successfully"
       redirect_to @coctaile
     else
-      flash[:warning] = @cocataile.errors.full_messages.to_sentence
-      prepare_ingredient_items
+      flash[:warning] = @coctaile.errors.full_messages.to_sentence
       render :new
     end
   end
