@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_filter :find_item, only: [:edit, :update, :destroy, :show]
 
 
-
   def index
     @products = Product.all
   end
@@ -19,7 +18,7 @@ class ProductsController < ApplicationController
 
   def item_params
     params.require(:product).
-        permit(:id, :name, :cost_price, :min_value, "product_type")
+        permit(:id, :name, :cost_price, :min_value, :have_alc, "product_type")
   end
 
   def edit

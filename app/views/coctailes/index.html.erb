@@ -9,6 +9,7 @@
         <th>Product Name</th>
         <th>Value</th>
         <th>Price</th>
+        <th>Have_alcohol</th>
         <th>Edit</th>
         <th>Remove</th>
       </tr>
@@ -19,6 +20,7 @@
           <td><%= link_to coctaile.name, coctaile_path(coctaile) %></td>
           <td><%= coctaile.value %></td>
           <td><%= coctaile.price %></td>
+          <td><%= coctaile.alcoholic %></td>
           <td><%= link_to 'edit', edit_coctaile_path(coctaile) %></td>
           <td><%= link_to 'remove', coctaile_path(coctaile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

@@ -3,7 +3,10 @@ class Coctaile < ActiveRecord::Base
   has_many :ingredients
   has_many :products, through: :ingredients
 
-  before_save { self.name = name.titleize }
+  before_save { self.name = name.titleize}
+  before_save  :set_alcohol_status!
+
+  enum alcoholic:[:alcohol, :unalcohol]
 
   validates :name, presence: true, allow_blank: false
 
@@ -15,22 +18,31 @@ class Coctaile < ActiveRecord::Base
 
   def validate_coctaile
     drink = 0
+    equal_products = 0
     ingredients.select{ |ingredient|
       if ingredient.product.present?
         if ingredient.product.product_type == 'drink'
           drink = drink + 1
         end
 
-        if ingredients.include? ingredient
-          errors.add(:coctaile, " can't have equal products")
+      end
+
+      ingredients.each do |ingredient_p|
+        if ingredient_p.product_id == ingredient.product_id
+          equal_products = equal_products + 1
         end
       end
     }
+
+
     if drink < 1
       errors.add(:coctaile, " must have more drinks")
     end
     if ingredients.size == 1
       errors.add(:coctaile, " must have more ingredients")
+    end
+    if equal_products > ingredients.size
+      errors.add(:coctaile, " can't have equal products")
     end
   end
 
@@ -46,6 +58,16 @@ class Coctaile < ActiveRecord::Base
       price + (ingredient.value / ingredient.product.min_value) *
         ingredient.product.price
     }
+  end
+
+private
+
+  def set_alcohol_status!
+    alc_ingredients = ingredients.select{ |ingredient|
+        ingredient.product.have_alc?
+    }
+    self.have_alc = alc_ingredients.size > 0 ? 1 : 0
+
   end
 
 

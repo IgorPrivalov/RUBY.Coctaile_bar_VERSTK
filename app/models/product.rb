@@ -23,4 +23,9 @@ class Product < ActiveRecord::Base
     @@product_types
   end
 
+  def have_alc?
+    self.have_alc == 1
+
+  end
+
 end

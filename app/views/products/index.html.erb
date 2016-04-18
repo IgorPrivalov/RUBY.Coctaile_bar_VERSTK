@@ -9,6 +9,7 @@
         <th>Cost Price</th>
         <th>Min Value</th>
         <th>Type</th>
+        <th>Alcohol</th>
         <th>Edit</th>
         <th>Remove</th>
       </tr>
@@ -19,6 +20,7 @@
           <td><%= product.cost_price %></td>
           <td><%= product.min_value %></td>
           <td><%= product.product_type %></td>
+          <td><%= product.have_alc %></td>
           <td><%= link_to 'edit', edit_product_path(product) %></td>
           <td><%= link_to 'remove', product_path(product), method: :delete, data: {confrim: 'Are you sure?'} %></td>
         </tr>

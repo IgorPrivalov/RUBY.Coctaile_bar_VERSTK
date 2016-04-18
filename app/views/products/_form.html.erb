@@ -4,5 +4,7 @@
   <%= number_field :product, :cost_price %></p>
 <p><%= f.label :min_value %><br>
   <%= number_field :product, :min_value %></p>
+<p><%= f.label :have_alc, "alcohol product" %>
+  <%= f.radio_button :have_alc, 1 %></p>
 <p><%= f.label :type %><br>
   <%= select(:product, :product_type, Product.product_types) %></p>
