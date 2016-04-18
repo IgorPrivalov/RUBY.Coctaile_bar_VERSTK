@@ -9,8 +9,8 @@ class Ingredient < ActiveRecord::Base
   belongs_to :product
 
   def validate_value
-    if product.present? && value < product.min_value
-      errors.add(:value, "for product '#{product.name}' must be greater '#{product.min_value }'")
+    if product.present? && value != nil && value < product.min_value
+      errors.add(:value, " for product '#{product.name}' must be greater '#{product.min_value }'")
     end
   end
 
