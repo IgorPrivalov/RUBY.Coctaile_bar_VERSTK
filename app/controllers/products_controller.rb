@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
   def item_params
     params.require(:product).
-        permit(:id, :name, :cost_price, :min_value, :have_alc, "product_type")
+        permit(:id, :name, :cost_price, :min_value, :have_alc, "product_type", :image)
   end
 
   def edit

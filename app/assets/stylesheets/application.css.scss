@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+input[type = submit] {
+  @extend  .btn;
+  @extend  .btn-success;
+}
+
+input[type = text] {
+  @extend  .form-control;
+}
+
+input[type = number] {
+  @extend  .form-control;
+}
+
+select {
+  @extend .form-control;
+}
+
+.body_panel {
+  @extend .panel;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+label {
+  @extend .col-sm-2;
+  @extend .control-label;
+}
+
+form {
+  @extend .form-horizontal;
+}

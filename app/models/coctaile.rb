@@ -24,7 +24,6 @@ class Coctaile < ActiveRecord::Base
         if ingredient.product.product_type == 'drink'
           drink = drink + 1
         end
-
       end
 
       ingredients.each do |ingredient_p|

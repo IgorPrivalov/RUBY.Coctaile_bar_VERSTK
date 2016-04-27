@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  mount_uploader :image, ProductImageUploader
+
   validates :name, :cost_price, :min_value, :product_type, presence: true
   validates :name, presence: true, allow_blank: false
   validates :cost_price, :min_value, numericality: {greater_than: 0 }
@@ -25,7 +27,6 @@ class Product < ActiveRecord::Base
 
   def have_alc?
     self.have_alc == 1
-
   end
 
 end
