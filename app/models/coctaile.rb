@@ -1,5 +1,7 @@
 class Coctaile < ActiveRecord::Base
 
+  mount_uploader :image, CoctaileImageUploader
+
   has_many :ingredients
   has_many :products, through: :ingredients
 

@@ -23,4 +23,9 @@ module ApplicationHelper
       #{form_builder.select(method, choices, options, html_options)} </div>".html_safe
   end
 
+  def form_field_radio(form_builder, field_name)
+    "<div class='field form-group'> #{form_builder.label(field_name)}
+      <div class='col-sm-1'> #{form_builder.check_box(field_name)} </div></div>".html_safe
+  end
+
 end

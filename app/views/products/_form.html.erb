@@ -7,6 +7,9 @@
       <%= form_field_row_select(f, :type, :product_type, Product.product_types) %>
     </div>
     <div class="field form-group">
+      <%= form_field_radio(f, :have_alc) %>
+    </div>
+    <div class="field form-group">
       <%= f.label :image, class: "col-md-2 control-label" %>
       <div class="col-sm-3">
         <%= f.file_field :image, multiple: false %>

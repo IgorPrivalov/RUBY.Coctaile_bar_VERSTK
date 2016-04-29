@@ -31,7 +31,7 @@ class CoctailesController < ApplicationController
   end
 
   def item_params
-    params.require(:coctaile).permit(:id, :name, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
+    params.require(:coctaile).permit(:id, :name,:image, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
   end
 
   def edit
