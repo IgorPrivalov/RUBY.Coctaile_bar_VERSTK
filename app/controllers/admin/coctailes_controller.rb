@@ -1,4 +1,4 @@
-class CoctailesController < ApplicationController
+class Admin::CoctailesController < Admin::ApplicationController
 
   INGREDIENT_MAX_COUNT = 5
 
@@ -23,7 +23,7 @@ class CoctailesController < ApplicationController
     @coctaile = Coctaile.create item_params
     if @coctaile.errors.empty?
       flash[:success] = "Coctaile \'#{@coctaile.name.humanize}\' was created successfully"
-      redirect_to @coctaile
+      redirect_to action: 'index'
     else
       flash[:warning] = @coctaile.errors.full_messages.to_sentence
       render :new
@@ -31,7 +31,7 @@ class CoctailesController < ApplicationController
   end
 
   def item_params
-    params.require(:coctaile).permit(:id, :name,:image, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
+    params.require(:coctaile).permit(:id, :name,:image, :value, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
   end
 
   def edit

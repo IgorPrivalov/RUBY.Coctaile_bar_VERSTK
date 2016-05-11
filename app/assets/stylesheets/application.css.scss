@@ -47,3 +47,17 @@ label {
 form {
   @extend .form-horizontal;
 }
+
+.sign_in_panel {
+  @extend .col-sm-offset-4;
+  @extend .col-sm-4;
+  @extend .panel;
+}
+
+.label-info {
+  padding-left: 0px;
+}
+
+.slide {
+  height: 770px;
+}

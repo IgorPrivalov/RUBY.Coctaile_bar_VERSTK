@@ -4,7 +4,9 @@
     <div class="row form-group">
       <div class="col-sm-3"><%= image_tag(@coctaile.image_url, size: '280', class: "img-thumbnail") if @coctaile.image? %></div>
       <div class="col-sm-9 form-group">
-        <div class="field form-group"><%= f.label "Ingredients:" %></div>
+        <div class="field form-group">
+          <%= f.label "Ingredients:" %>
+        </div>
         <%= form_ingredients(f, :value, :product,:product_id, Product.all, :id, :name, {prompt: true}, {}, :ingredients) %>
        </div>
     </div>

@@ -12,13 +12,14 @@
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
 <div class="navbar navbar-default">
-  <% if admin_signed_in? %>
-      <span>Здравствуйте, <%= current_admin.email %></span>
-      <%= link_to 'Выйти', destroy_admin_session_path, :method => :delete %>
-  <% else %>
-      <%= link_to 'Войти', new_admin_session_path %> или <%= link_to 'Зарегистрироваться', new_admin_registration_path %>
-  <% end %>
+<% if admin_signed_in? %>
+    <span>Здравствуйте, <%= current_admin.email %></span>
+    <%= link_to 'Выйти', destroy_admin_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_admin_session_path %> или <%= link_to 'Зарегистрироваться', new_admin_registration_path %>
+<% end %>
 </div>
+<br>
 <%= yield %>
 
 </body>

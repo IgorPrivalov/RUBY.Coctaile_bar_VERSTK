@@ -1,0 +1,16 @@
+<div class="body_panel panel-default">
+  <div class="row">
+    <% @coctailes.each do |coctaile| %>
+     <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag(coctaile.image_url, size: '130', class: "img-thumbnail") if coctaile.image? %>
+          <div class="row">
+              <% coctaile.products.each do |product| %>
+              <span class="label label-info col-sm-3 col-sm-offset-1"><%= product.name %></span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

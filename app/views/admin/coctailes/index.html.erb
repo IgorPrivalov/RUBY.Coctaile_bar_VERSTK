@@ -1,5 +1,4 @@
 <%= render partial: 'layouts/partials/header' %>
-<h1>Hello</h1>
 <% if @coctailes.empty? %>
     <h2>Coctailes list is empty</h2>
 
@@ -18,14 +17,14 @@
       <% @coctailes.each do |coctaile| %>
         <tr>
           <td><%= coctaile.id %></td>
-          <td><%= link_to coctaile.name, coctaile_path(coctaile) %></td>
+          <td><%= link_to coctaile.name, admin_coctaile_path(coctaile) %></td>
           <td><%= coctaile.value %></td>
           <td><%= coctaile.price %></td>
           <td><%= coctaile.alcoholic %></td>
-          <td><%= link_to 'edit', edit_coctaile_path(coctaile) %></td>
-          <td><%= link_to 'remove', coctaile_path(coctaile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'edit', edit_admin_coctaile_path(coctaile) %></td>
+          <td><%= link_to 'remove', admin_coctaile_path(coctaile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </table>
  <% end %>
-<%= link_to 'New_Coctaile', new_coctaile_path(@coctaile) %>
+<%= link_to 'New_Coctaile', new_admin_coctaile_path(@coctaile) %>

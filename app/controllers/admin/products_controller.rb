@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < Admin::ApplicationController
 
   before_filter :find_item, only: [:edit, :update, :destroy, :show]
 
