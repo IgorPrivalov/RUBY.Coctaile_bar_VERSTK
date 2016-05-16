@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
   end
 
   def show_coctaile
-    @coctaile = Coctaile.where(id: params[:id])
+    @coctaile = Coctaile.find_by params[:id]
   end
 
 private

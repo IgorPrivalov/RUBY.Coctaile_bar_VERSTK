@@ -9,6 +9,7 @@ Rails.application.routes.draw do
    resources :welcome
    get 'show_coctaile' => "welcome#show_coctaile"
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -59,5 +60,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
        resources :products
        resources :coctailes
+       resources :ajax_products
      end
 end
