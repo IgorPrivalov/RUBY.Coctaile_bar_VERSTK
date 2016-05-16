@@ -28,4 +28,5 @@ module ApplicationHelper
       <div class='col-sm-1'> #{form_builder.check_box(field_name)} </div></div>".html_safe
   end
 
+
 end

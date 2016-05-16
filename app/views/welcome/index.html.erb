@@ -1,0 +1,8 @@
+<%= render partial: 'welcome/partials/carousel' %>
+<% if @shorts.count > 0 %>
+  <%= render partial: 'welcome/partials/shorts' %>
+<% end %>
+<% if @longs.count > 0 %>
+    <%= render partial: 'welcome/partials/longs' %>
+<% end %>
+<%= render partial: 'welcome/partials/coctaile_list' %>

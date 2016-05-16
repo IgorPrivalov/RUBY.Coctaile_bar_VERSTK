@@ -1,14 +1,8 @@
-<div class="body body_panel">
-  <div class="row">
-    <% @shorts.each do |short| %>
-    <div class="col-sm-2">
-      <div class="thumbnail">
-        <%= image_tag(short.image_url, size: '130') %>
-        <div class="caption">
-          <h3><%= short.name %></h3>
-        </div>
-      </div>
-    </div>
-    <% end %>
+<div id="shorts" class="panel panel-default">
+  <div class="page-header">
+    <h1>Shorts</h1>
   </div>
+    <div class="row">
+      <%= coctaile_thumbnail(@shorts) %>
+    </div>
 </div>

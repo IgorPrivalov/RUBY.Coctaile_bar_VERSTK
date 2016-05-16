@@ -1,6 +1,6 @@
 module CoctailesHelper
 
-  def form_ingredients(form_builder, field_name_num, field_name_col, method, collection, value_method, text_method, options = {}, html_options = {}, ingredients)
+  def form_ingredients(form_builder, field_name_num, field_name_col, method, collection, value_method, text_method, options = {}, html_options = {})
     form_builder.fields_for :ingredients do |form_builder|
       "<div class='field form-group'>
         <div class='field form-group'>

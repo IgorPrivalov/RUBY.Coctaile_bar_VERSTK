@@ -1,0 +1,15 @@
+<div class="body_panel panel-default">
+  <div class="page-header">
+    <p><%= @coctaile.name %></p>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+      <%= image_tag(@coctaile.image_url, size: '300', class: 'img-thumbnail') if @coctaile.image? %>
+    </div>
+    <div class="col-sm-5 cols-sm-offset-1">
+      <% @coctaile.ingredients.each do |ingredient| %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ class Admin::CoctailesController < Admin::ApplicationController
   end
 
   def index
-    @coctailes = Coctaile.all
+    @coctailes = Coctaile.includes(:ingredients, :products)
   end
 
   def new
@@ -31,7 +31,7 @@ class Admin::CoctailesController < Admin::ApplicationController
   end
 
   def item_params
-    params.require(:coctaile).permit(:id, :name,:image, :value, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
+    params.require(:coctaile).permit(:id, :name, :image, :value, ingredients_attributes: [:id, :value, :product_id, :coctaile_id])
   end
 
   def edit

@@ -8,13 +8,13 @@
     <% else %>
     <div class="item">
     <% end %>
-      <%= image_tag(coctaile.image_url, size: '400') if coctaile.image? %>
+      <%= image_tag(coctaile.image_url, width: '1250') if coctaile.image? %>
       <div class="carousel-caption">
+        <h3><% coctaile.name %></h3>
         <h3>Price: <%= coctaile.price %></h3>
       </div>
     </div>
     <% end %>
-    ...
   </div>
 
   <!-- Controls -->

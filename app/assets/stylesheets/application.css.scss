@@ -14,7 +14,10 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
+
+
 
 input[type = submit] {
   @extend  .btn;
@@ -54,10 +57,13 @@ form {
   @extend .panel;
 }
 
-.label-info {
-  padding-left: 0px;
+.panel {
+  margin: 10px;
 }
 
-.slide {
-  height: 770px;
+.alert {
+  margin: 0px;
+  padding: 0px;
 }
+
+

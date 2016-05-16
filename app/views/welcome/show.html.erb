@@ -1,5 +1,9 @@
-<%= render partial: 'welcome/partials/carousel' %>
-<% if @shorts.size > 0 %>
-  <%= render partial: 'welcome/partials/shorts' %>
+<% if @coctailes.count > 0 %>
+  <%= render partial: 'welcome/partials/coctailes_with_product' %>
 <% end %>
-<%= render partial: 'welcome/partials/coctaile_list' %>
+<% if @shorts.count > 0 %>
+    <%= render partial: 'welcome/partials/shorts' %>
+<% end %>
+<% if @longs.count > 0 %>
+    <%= render partial: 'welcome/partials/longs' %>
+<% end %>
