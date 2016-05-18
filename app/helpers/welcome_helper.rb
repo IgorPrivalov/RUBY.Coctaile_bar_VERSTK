@@ -6,7 +6,7 @@ module WelcomeHelper
      out += "<div class='col-sm-2'>
        <div class='thumbnail'>
         <div class='field form-group'>
-         #{link_to image_tag(coctaile.image_url, size: '150', class: 'img-thumbnail'),{action: 'show_coctaile', controller: 'welcome'}, method: 'get'}
+         #{link_to image_tag(coctaile.image_url , class: 'img-thumbnail'),{action: 'show_coctaile', controller: 'welcome'}, method: 'get'}
          #{link_to coctaile.price, welcome_path(coctaile), class: 'btn btn-success', role: 'button'}
         </div>
          <div class='caption'>

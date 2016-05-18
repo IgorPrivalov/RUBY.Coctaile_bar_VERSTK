@@ -34,6 +34,25 @@ class Admin::AjaxProductsController < ApplicationController
     end
   end
 
+
+  def create
+  	@product = Product.new item_params
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to @product, notice: "Product was created" }
+        format.js
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { render action: :new}
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def new
+    @product = Product.new
+  end
+
   def update
     respond_to do |format|
       if @product.update_attributes(item_params)

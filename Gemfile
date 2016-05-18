@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'rake'
 
+gem "mini_magick"
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Use ActiveModel has_secure_password

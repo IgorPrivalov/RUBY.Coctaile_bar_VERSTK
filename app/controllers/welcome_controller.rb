@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
 
+
   def index
     @coctailes = Coctaile.includes(:ingredients, :products)
     find_shorts_and_longs @coctailes
